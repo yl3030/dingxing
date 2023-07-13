@@ -5,3 +5,14 @@ $(window).on("resize scroll",function(){
         $(".header").removeClass("scroll")
     }
 })
+
+$(".btn-download").click(function(){
+    $(".download-list").slideToggle(300);
+})
+
+$(document).click(function (event) {
+    var d_con = $(".btn-download");
+    if (!d_con.is(event.target) && d_con.has(event.target).length === 0) {
+        $(".download-list").slideUp(300);
+    }
+});
